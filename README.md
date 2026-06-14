@@ -86,11 +86,10 @@ Classified dataset columns into categories:
 - Applied **one-hot encoding** and **label encoding** where required.  
 
 ### Derived Features
-- `principal_paid_ratio = total_rec_prncp / loan_amnt`  
-- `interest_paid_ratio = total_rec_int / loan_amnt`  
-- `debt_ratio = installment / annual_inc`  
-- `credit_history_years = issue_d.year - earliest_cr_line.year`  
-- `delinq_flag` = Categorized delinquency status (**No, Maybe, Yes**)  
+   - `fico_score` = ((`fico_range_low`) + (`fico_range_high`))/2
+   - `funding_ratio` = `funded_amnt` / `loan_amnt`
+   - `int_ratio` = `total_rec_int` / `total_pymnt`
+   - `principal_paid_ratio` = `total_rec_prncp` / `loan_amnt`
 
 ### Final Feature Set
 - **Loan and Funding Information:**  
@@ -106,7 +105,7 @@ Classified dataset columns into categories:
   `last_pymnt_amnt`, `pub_rec_bankruptcies`  
 
 - **Engineered Features:**  
-  `principal_paid_ratio`, `interest_paid_ratio`, `debt_ratio`, `credit_history_years`, `delinq_flag`  
+- `fico_score`, `funding_ratio`, `int_ratio`, `principal_paid_ratio`, `is_default`, `simplified_loan_status`, `cc_grade`
 
 ---
 
